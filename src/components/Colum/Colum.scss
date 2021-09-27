@@ -1,0 +1,57 @@
+@import "_setting.scss";
+
+$colums-header-height:36px;
+$colums-footer-height:36px;
+$colums-border-radius:5px;
+
+$appbar-bg-color:#0067a3;
+$list-bg-color:#ebecf0;
+
+.colums{
+    flex: 0 0 auto;
+    width: 300px;
+    height:calc(100%-#{$gap});
+    &:not(:first-child){
+        margin-left: $gap;
+    }
+    > *{
+        background-color:$list-bg-color;
+        color: #333;
+        padding: 0 8px;
+    }
+    header{
+        padding-left: 15px;
+        height: $colums-header-height;
+        line-height: $colums-header-height;
+        font-size: 16px;
+        font-weight: bold;
+        border-top-left-radius: $colums-border-radius;
+        border-top-right-radius: $colums-border-radius;
+    }
+    footer{
+        padding-left: $gap;
+        height: $colums-footer-height;
+        line-height: $colums-footer-height;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom-left-radius: $colums-border-radius;
+        border-bottom-right-radius: $colums-border-radius;
+    }
+    ul.task_list{
+        list-style-type: none;
+        margin: 0;
+        max-height: calc(100%-#{$colums-header-height}-#{$colums-footer-height});
+        max-height: 80vh;
+        overflow-y:auto;
+        &::-webkit-scrollbar{
+            -webkit-appearance: none;
+        }
+        &::-webkit-scrollbar:vertical{
+            width: 11px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: darken($list-bg-color,15);
+            border-right: 5px solid $list-bg-color;
+        }
+    }
+}

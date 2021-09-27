@@ -1,15 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react"
+import "./App.scss"
 
-import Nav from "./view/Nav";
+import AppBar from 'components/AppBar/AppBar'
+import BoardBar from 'components/BoardBar/BoardBar'
+import BoardContent from 'components/BoardContent/BoardContent'
 
 function App() {
   return (
-  <Router>
-    <Switch>
-      <Route path="/" exact component={Nav}></Route>
-    </Switch>
-  </Router>
+    <div className="trello">
+            <AppBar></AppBar>
+            <BoardBar></BoardBar>
+            <BoardContent></BoardContent>
+        </div>
   );
 }
 
